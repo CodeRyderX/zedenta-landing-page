@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+.each-text {
+  @apply text-black rounded-md px-3 py-2 text-[18px] font-sora flex flex-col z-20;
+}
+
+.each-text > div {
+  width: 0px;
+  height: 6px;
+}
+
+.each-text:hover > div {
+  width: 15px;
+}
+
+.nav-div {
+  @apply flex transition-all duration-300 -mt-[10px] -z-10
+}
+
+.border-btn {
+  @apply py-1 px-4 border w-max h-max rounded-3xl border-[#C5D1E7];
+}
+.brandbook {
+  @apply text-[#747198] text-[18px] pl-6;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.bold-text{
+  @apply text-[#282560] font-medium text-[40px] tracking-tighter leading-tight;
+}
+
+.light-text{
+  @apply text-[#747AAF]
+}
+
+.bold-hover > div > div{
+  width: 1px;
+  background-color: white;
+  height: 2px;
+}
+
+.bold-hover:hover > div > div {
+  width: 180px;
+  background-color: #282560;
+  height: 1px;
+}
+
+.bold-appear > div > div{
+  display: none;
+}
+
+.bold-appear:hover > div > div{
+  display: flex;
+}
