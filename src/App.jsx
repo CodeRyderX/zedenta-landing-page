@@ -52,29 +52,31 @@ import logo from "./assets/images/FKRI-studio.png";
 function App() {
   return (
     <div className="w-full h-max flex flex-col justify-center">
-      <div className="fixed bottom-5 left-5 w-max h-max p-3 shadow-lg shadow-gray-300 rounded-3xl">
+      <div className="fixed bottom-5 left-5 w-max h-max p-3 shadow-lg bg-white shadow-gray-300 rounded-3xl">
         <IoArrowUpOutline />
       </div>
 
       <div className="fixed bottom-5 right-5 w-max h-max p-4 shadow-lg shadow-gray-400 rounded-full bg-[#93D4CC]">
-        <BiSolidMessageAlt className="text-[#282560]" size={30}/>
+        <BiSolidMessageAlt className="text-[#282560]" size={30} />
       </div>
 
       <nav className="bg-white">
         {/* Navbar */}
 
-        <div className=" w-full h-auto flex flex-col items-center justify-center  fixed top-0">
+        <div className=" w-full h-auto flex flex-col items-center justify-center z-30 fixed top-0">
           {/* Top Section */}
           <div className=" w-full h-max flex bg-[#111029] justify-between py-3 px-14">
             <div className=" w-auto h-auto flex gap-3">
-              <div className=" w-auto h-auto text-sm px-2 bg-[#93D4CC] rounded-2xl">
-                <p className=" text-[#282560] font-medium">2 spots left</p>
+              <div className=" w-auto h-auto text-sm py-[2px] md:py-0 px-2 bg-[#93D4CC] rounded-2xl">
+                <p className=" text-[#282560] text-[13px] md:text-base font-medium">
+                  2 spots left
+                </p>
               </div>
-              <p className="font-medium text-sm text-white">
+              <p className="text-[12px] md:text-base font-medium lg:text-sm text-white">
                 Let's collaborate on your new project.
               </p>
             </div>
-            <div className=" w-auto h-auto flex gap-3 text-white pl-10">
+            <div className="hidden w-auto h-auto md:flex md:gap-7 lg:gap-3 text-white pl-10">
               <p className=" font-medium cursor-pointer underline">Dribbble</p>
               <p className=" font-medium cursor-pointer underline">Behance</p>
               <p className=" font-medium cursor-pointer underline">Instagram</p>
@@ -91,7 +93,7 @@ function App() {
             </div>
 
             {/* Buttons */}
-            <div className="hidden md:ml-6 md:flex md:items-center md:justify-between md:space-x-4">
+            <div className="hidden lg:ml-6 lg:flex md:items-center lg:justify-between lg:space-x-4">
               <a href="#" className="each-text">
                 Clients Testimonials
                 <div className="bg-[#908AC2] nav-div"></div>
@@ -118,13 +120,26 @@ function App() {
               </a>
             </div>
 
+            {/* Contact Us Btn */}
             <div className="flex items-center">
               {/* "New Job" Button */}
               <button
                 type="button"
-                className="relative inline-flex items-center gap-x-1.5 rounded-3xl bg-[#FBDC5E] px-5 py-2 font-sora text-[18px] text-black shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                className=" hidden relative lg:inline-flex items-center gap-x-1.5 rounded-3xl bg-[#FBDC5E] px-5 py-2 font-sora text-[18px] text-black shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
                 Contact Us
+              </button>
+            </div>
+
+            {/* Hamburger Icon */}
+            <div className="flex items-center">
+              {/* "New Job" Button */}
+              <button
+                type="button"
+                className=" flex flex-col gap-[6px] lg:hidden"
+              >
+                <div className=" w-4 h-[2px] bg-[#282560]"></div>
+                <div className=" w-4 h-[2px] bg-[#282560]"></div>
               </button>
             </div>
           </div>
@@ -144,7 +159,7 @@ function App() {
             </div>
             <p className="text-[55px] font-semibold text-[#282560] tracking-tighter leading-tight">
               Zendenta - Dental Clinic <br />
-              Management System Case <br /> study
+              Management System Case <br className="hidden lg:flex" /> study
             </p>
           </div>
           <div className=" w-full h-max">
@@ -152,21 +167,21 @@ function App() {
           </div>
         </div>
 
+        {/* Separated Section */}
         <div className=" w-full h-max flex flex-col gap-56 pb-56">
-          {/* Separated Section */}
           <div className=" flex w-full h-max justify-between">
             {/* Left Side */}
-            <div className=" w-[27%] h-max flex flex-col divide-y divide-[#C5D1E7]">
+            <div className="w-[40%] md:w-[27%] h-max flex flex-col divide-y divide-[#C5D1E7]">
               <div className=" flex flex-col gap-[20px] py-9">
                 <p className="text-[#282560] text-[20px] font-sora font-semibold">
                   Deliveries
                 </p>
                 <div className=" flex flex-col gap-[10px]">
-                  <div className="flex gap-[10px]">
+                  <div className="flex flex-col md:flex-row lg:flex gap-[10px]">
                     <div className=" border-btn">Product Design</div>
                     <div className="border-btn">Illustration</div>
                   </div>
-                  <div className="flex gap-[10px]">
+                  <div className="flex flex-col md:flex-row lg:flex gap-[10px]">
                     <div className="border-btn">Prototype</div>
                     <div className="border-btn">Brandbook</div>
                   </div>
@@ -224,17 +239,19 @@ function App() {
             </div>
 
             {/* Right Side */}
-            <div className=" w-[60%] h-max flex flex-col gap-20">
+            <div className=" w-[40%] md:w-[60%] h-max flex flex-col gap-20">
               {/* Challenges */}
               <div className="flex flex-col font-sora gap-7">
-                <p className="bold-text">The challenge</p>
+                <p className="bold-text">
+                  The <br className=" flex md:hidden" /> challenge
+                </p>
                 <div className=" flex flex-col text-[17px] gap-5">
                   <p className=" text-[#747AAF]">
                     We must understand the ins and outs of every medical
                     activity in detail. This complexity <br />
                     is essential in providing our valued clients with the most
                     optimal solutions. In addition, because the majority of
-                    dental clinics have preferences that still rely on manual{" "}
+                    dental clinics have preferences that still rely on manual
                     <br />
                     processes.
                   </p>
@@ -279,17 +296,20 @@ function App() {
           </div>
         </div>
 
+        {/* Streamlining Section */}
         <div className=" w-full h-max flex flex-col gap-24 pb-56">
-          {/* Streamlining Section */}
-          <div className="w-full flex flex-col items-center text-start gap-7">
-            <p className="bold-text">Streamlining clinic management.</p>
-            <p className=" light-text">
+          <div className="w-full flex flex-col md:items-start gap-3 md:gap-7">
+            <p className="small-bold-text md: bold-text">
+              Streamlining clinic management.
+            </p>
+            <p className="small-light-text md:light-text md:text-base">
               The ultimate solution for effortless clinic management. Explore
-              the smooth flow of appointment <br />
+              the smooth flow of appointment <br className="hidden md:flex" />
               scheduling, convenient bill payments, and meticulous appointment
               closure. We have an user-friendly <br />
               interface, clinics and patients can now experience optimized care
-              and enhanced efficiency, ensuring a <br />
+              and enhanced efficiency, ensuring a
+              <br className="hidden md:flex" />
               seamless and hassle-free journey.
             </p>
           </div>
@@ -298,14 +318,16 @@ function App() {
           </div>
         </div>
 
+        {/* Refreshing Section */}
         <div className=" w-full h-max flex flex-col gap-24 pb-56">
-          {/* Refreshing Section */}
-          <div className="flex flex-col">
-            <p className="bold-text">A refreshingly clean experience.</p>
-            <p className=" light-text">
+          <div className="flex flex-col gap-3">
+            <p className="small-bold-text md: bold-text">
+              A refreshingly clean experience.
+            </p>
+            <p className=" small-light-text md:light-text md:text-base">
               A refreshing blend of carefully selected typefaces, modern icons,
-              and a <br />
-              fresh medical-inspired color palette. Embrace efficient clinic{" "}
+              and a <br className=" hidden md:flex" />
+              fresh medical-inspired color palette. Embrace efficient clinic
               <br /> management with a user-friendly interface that elevates
               satisfaction <br />
               through modern simplicity.
@@ -320,18 +342,20 @@ function App() {
           </div>
         </div>
 
+        {/* Simple & clean Section */}
         <div className="w-full h-max flex flex-col gap-24 pb-56">
-          {/* Simple & clean Section */}
-          <div className="flex flex-col gap-7">
-            <p className="bold-text">
+          <div className="flex flex-col gap-3 md:gap-7">
+            <p className="small-bold-text md: bold-text">
               Simple & clean, <br />
               user-friendly design.
             </p>
-            <p className=" light-text">
+            <p className=" small-light-text md:light-text md:text-base">
               A stunning showcase of modern, simple, and clean design that
-              prioritizes user-friendliness. Experience <br />
+              prioritizes user-friendliness. Experience
+              <br className="hidden md:flex" />
               the effortless efficiency of clinic management through carefully
-              crafted interfaces, intuitive navigation, <br />
+              crafted interfaces, intuitive navigation,
+              <br className="hidden md:flex" />
               and a fresh, inviting user experience.
             </p>
           </div>
@@ -345,18 +369,19 @@ function App() {
           </div>
         </div>
 
+        {/* Fast Section */}
         <div className="w-full h-max flex flex-col gap-24 pb-56">
-          {/* Refreshing Section */}
-          <div className="flex flex-col gap-7">
-            <p className="bold-text">
+          <div className="flex flex-col gap-3 md:gap-7">
+            <p className="small-bold-text md: bold-text">
               Fast and user-friendly <br />
               appointment scheduling.
             </p>
-            <p className=" text-[#747AAF]">
+            <p className=" small-light-text md:light-text md:text-base">
               Discover the power of streamlined appointment scheduling with our
-              Fast and User-Friendly feature. <br />
+              Fast and User-Friendly feature. <br className="hidden md:flex" />
               Embrace a seamless journey as patients and clinic staff navigate a
-              simple, intuitive interface designed to <br />
+              simple, intuitive interface designed to{" "}
+              <br className="hidden md:flex" />
               optimize the scheduling process.
             </p>
           </div>
@@ -367,14 +392,15 @@ function App() {
         </div>
 
         {/* Scrollable Section */}
-        <div className="w-full h-max flex gap-24 pb-56">
-          <div className=" w-[45%] h-96 overflow-scroll flex flex-col pb-10 gap-10 hide-scrollbar">
+        <div className="w-full h-max flex flex-col-reverse lg:flex-row gap-24 pb-56">
+          {/* Left Side */}
+          <div className=" lg:w-[45%] h-max lg:h-96 overflow-scroll flex flex-col pb-10 gap-10 hide-scrollbar">
             {/* Step 1 */}
             <div className=" w-full h-max flex flex-col gap-5">
               <div className=" w-full h-max">
                 <img src={framePic1} alt="" className="" />
               </div>
-              <p className="text-[#747198] text-[18px]">
+              <p className="small-light-text md:text-[#747198] md:text-[18px]">
                 Step 1 - Treatment & dentist.
               </p>
             </div>
@@ -384,7 +410,7 @@ function App() {
               <div className=" w-full h-max">
                 <img src={framePic2} alt="" className="" />
               </div>
-              <p className="text-[#747198] text-[18px]">
+              <p className="small-light-text md:text-[#747198] md:text-[18px]">
                 Step 2 - Basic information.
               </p>
             </div>
@@ -394,61 +420,68 @@ function App() {
               <div className=" w-full h-max">
                 <img src={framePic3} alt="" className="" />
               </div>
-              <p className="text-[#747198] text-[18px]">
+              <p className="small-light-text md:text-[#747198] md:text-[18px]">
                 Step 3 - Oral hygeine habits.
               </p>
             </div>
           </div>
+
+          {/* Right Side */}
           <div className=" text-[18px] flex flex-col gap-7">
-            <p className=" text-[#747198]">
-              <span className="text-[#282560] font-semibold">
+            <p className=" small-light-text md:light-text md:text-base">
+              <span className="text-[#282560] font-semibold pr-2">
                 Add patient to waitlist
-              </span>{" "}
-              ----- With just a click, clinic staff can <br /> effortlessly
-              include patients in the waitlist, optimizing the patient <br />
+              </span>
+              ----- With just a click, clinic staff can
+              <br className=" md:hidden lg:flex" /> effortlessly include
+              patients in the waitlist,
+              <br className="hidden md:flex lg:hidden" /> optimizing the patient
+              <br className=" md:hidden lg:flex" />
               queue management.
             </p>
-            <p className="text-[#747198]">
-              Enjoy a user-friendly interface that empowers clinic staff to{" "}
-              <br />
-              efficiently handle waitlists, providing a seamless experience for{" "}
-              <br />
-              both patients and staff
+            <p className="small-light-text md:light-text md:text-base">
+              Enjoy a user-friendly interface that empowers clinic staff to
+              <br className=" md:hidden lg:flex" />
+              efficiently handle waitlists, providing a
+              <br className=" md:flex lg:hidden" />
+              seamless experience for
+              <br className=" md:hidden lg:flex" />
+              both patients and staff.
             </p>
           </div>
         </div>
 
         <div className="w-full h-max flex flex-col gap-24 pb-56">
-          <div className=" w-full h-max flex flex-col gap-7">
-            <p className="bold-text">
+          <div className=" w-full h-max flex flex-col gap-3 md:gap-7">
+            <p className="small-bold-text md: bold-text">
               4 steps to add medical <br />
               checkup data with ease.
             </p>
-            <p className=" text-[17px] text-[#747198]">
+            <p className="small-light-text md:light-text md:text-base">
               Record essential information, treatment plans, oral check results,
-              and <br /> agreements with ease. Elevate patient care wita
-              user-friendly process,
-              <br /> ensuring comprehensive andaccurate records.
+              and <br className="hidden md:flex" /> agreements with ease.
+              Elevate patient care wita user-friendly process,
+              <br className="hidden md:flex" /> ensuring comprehensive
+              andaccurate records.
             </p>
           </div>
-          <div className=" w-full h-max flex gap-7">
-            <img src={pic12} alt="" className="w-[50%]" />
-            <img src={pic13} alt="" className="w-[50%]" />
+          <div className=" w-full h-max flex flex-col md:flex-row gap-7">
+            <img src={pic12} alt="" className="md:w-[50%]" />
+            <img src={pic13} alt="" className="md:w-[50%]" />
           </div>
         </div>
 
         {/* Medical Records Section */}
         <div className="w-full h-max flex flex-col gap-24 pb-56">
-          <div className=" w-full h-max flex flex-col gap-10">
-            <p className="bold-text">
-              Adding medical records & <br />
+          <div className=" w-full h-max flex flex-col gap-3 md:gap-7">
+            <p className="small-bold-text md: bold-text">
+              Adding medical records & <br className="hidden md:flex" />
               finalizing treatment
             </p>
-            <p className=" text-[17px] text-[#747198]">
-              Record essential information, treatment plans, oral check results,
-              and <br /> agreements with ease. Elevate patient care wita
-              user-friendly process,
-              <br /> ensuring comprehensive and accurate records.
+            <p className=" small-light-text md:light-text md:text-base">
+              Streamline patient care with ease. Add medical records seamlessly
+              and finalize treatments effortlessly. <br className=" hidden md:flex lg:hidden"/> Optimize your clinic's
+              workflow for a smooth and comprehensive healthcare journey.
             </p>
           </div>
           <div className=" w-full h-max">
@@ -457,14 +490,14 @@ function App() {
         </div>
 
         {/* Scrollable Section 2 */}
-        <div className="w-full h-max flex gap-24 pb-52">
-          <div className=" w-[45%] h-96 overflow-scroll flex flex-col pb-10 gap-10 hide-scrollbar">
+        <div className="w-full h-max flex flex-col-reverse lg:flex-row gap-24 pb-52">
+          <div className=" lg:w-[45%] h-max lg:h-96 overflow-scroll flex flex-col pb-10 gap-10 hide-scrollbar">
             {/* Step 1 */}
             <div className=" w-full h-max flex flex-col gap-5">
               <div className=" w-full h-max">
                 <img src={framePic4} alt="" className="" />
               </div>
-              <p className="text-[#747198] text-[18px]">
+              <p className="small-light-text md:light-text md:text-base">
                 Finish treatment for each patient.
               </p>
             </div>
@@ -474,7 +507,7 @@ function App() {
               <div className=" w-full h-max">
                 <img src={framePic5} alt="" className="" />
               </div>
-              <p className="text-[#747198] text-[18px]">
+              <p className="small-light-text md:light-text md:text-base">
                 Set the component & medicine used.
               </p>
             </div>
@@ -484,13 +517,11 @@ function App() {
               <div className=" w-full h-max">
                 <img src={framePic6} alt="" className="" />
               </div>
-              <p className="text-[#747198] text-[18px]">
-                Set the medical record.
-              </p>
+              <p className="small-light-text md:light-text md:text-base">Set the medical record.</p>
             </div>
           </div>
           <div className=" text-[18px] flex flex-col gap-7">
-            <p className=" text-[#747198]">
+            <p className=" small-light-text md:light-text md:text-base">
               <span className="text-[#282560] font-semibold pr-1">
                 Finish treatment
               </span>
@@ -501,12 +532,12 @@ function App() {
                 <span className=" -ml-1">-</span>
                 <span className=" -ml-1">- </span>
               </span>
-              Efficiently plan patient care with personalized <br />
-              recommendations and treatment suggestions. Empower clinic <br />
+              Efficiently plan patient care with personalized <br className="md:hidden lg:flex"/>
+              recommendations and treatment <br className=" hidden md:flex lg:hidden"/>suggestions. Empower clinic <br className="md:hidden lg:flex"/>
               staff with user-friendly interfaces for informed decision-making.
             </p>
-            <p className="text-[#747198]">
-              Elevate your clinic's treatment management for lasting <br />
+            <p className="small-light-text md:light-text md:text-base">
+              Elevate your clinic's treatment management for lasting <br className="md:hidden lg:flex"/>
               relationships and improved health outcomes.
             </p>
           </div>
@@ -514,13 +545,13 @@ function App() {
 
         {/* Many Pics Section */}
         <div className=" w-full h-max flex flex-col gap-24 pb-52">
-          <div className="flex flex-col gap-7">
-            <p className="bold-text">Simplified sales module.</p>
-            <p className=" text-[#747AAF] text-[17px]">
+          <div className="flex flex-col gap-3 md:gap-7">
+            <p className="small-bold-text md: bold-text">Simplified sales module.</p>
+            <p className=" small-light-text md:light-text md:text-base">
               Where managing transactions becomes a breeze. Experience the ease
-              of paying bills, efficient <br />
+              of paying bills, efficient <br className=" hidden md:flex" />
               tracking of transactions, and seamless transfers between various
-              accounts like free cash and <br />
+              accounts like free cash and <br className=" hidden md:flex" />
               treatment funds.
             </p>
           </div>
@@ -529,44 +560,44 @@ function App() {
             <img src={mainPic1} alt="" className="" />
             <img src={mainPic2} alt="" className="" />
             <img src={mainPic3} alt="" className="" />
-            <div className=" w-full h-[600px] flex gap-7">
-              <img src={mainPic4} alt="" className="w-[50%]" />
-              <img src={mainPic5} alt="" className="w-[50%]" />
+            <div className=" w-full h-max lg:h-[600px] flex flex-col lg:flex-row gap-7">
+              <img src={mainPic4} alt="" className="lg:w-[50%]" />
+              <img src={mainPic5} alt="" className="lg:w-[50%]" />
             </div>
           </div>
         </div>
 
         {/* Payment Section */}
         <div className=" w-full h-max flex flex-col gap-24 pb-52">
-          <div className="flex flex-col gap-7">
-            <p className="bold-text">
-              Organize transactions with <br />
+          <div className="flex flex-col gap-3 md:gap-7">
+            <p className="small-bold-text md: bold-text">
+              Organize transactions with <br className=" md:hidden"/>
               accounts.
             </p>
-            <p className=" text-[#747AAF] text-[17px]">
+            <p className=" small-light-text md:light-text md:text-base">
               This is a pocket to give experience the ease of financial
-              management. <br />
+              management. <br className=" hidden md:flex" />
               Effortlessly create designated pockets to collect and track money
-              from <br />
+              from <br className=" hidden md:flex" />
               all transactions & expenses. With a user-friendly interface,
-              clinic staff <br />
+              clinic staff <br className=" hidden md:flex" />
               can efficiently monitor and allocate funds with precision
             </p>
           </div>
 
           <div className=" w-full h-max flex flex-col gap-7">
             <img src={payPic1} alt="" className="" />
-            <div className=" w-full h-[600px] flex gap-7">
-              <img src={payPic2} alt="" className="w-[50%]" />
-              <img src={payPic3} alt="" className="w-[50%]" />
+            <div className=" w-full h-max lg:h-[600px] flex flex-col lg:flex-row gap-7">
+              <img src={payPic2} alt="" className="lg:w-[50%]" />
+              <img src={payPic3} alt="" className="lg:w-[50%]" />
             </div>
           </div>
         </div>
 
         {/* Scrollable Section 3 */}
-        <div className="w-full h-max flex gap-24 pb-52">
+        <div className="w-full h-max flex flex-col lg:flex-row gap-24 pb-52">
           <div className=" text-[18px] flex flex-col gap-7">
-            <p className=" text-[#747198]">
+            <p className="small-light-text md:light-text md:text-base">
               <span className="text-[#282560] font-semibold pr-1">
                 Transfer money
               </span>
@@ -577,19 +608,19 @@ function App() {
                 <span className=" -ml-1">-</span>
                 <span className=" -ml-1">- </span>
               </span>
-              Effortlessly transfer funds between accounts. <br />
-              Empower users to securely move money from one account to <br />
+              Effortlessly transfer funds between accounts. <br className=" md:hidden lg:flex"/>
+              Empower users to securely move money <br className=" md:flex lg:hidden"/> from one account to <br className=" md:hidden lg:flex"/>
               another, streamlining financial transactions.
             </p>
           </div>
 
-          <div className=" w-[45%] h-96 overflow-scroll flex flex-col pb-10 gap-10 hide-scrollbar">
+          <div className=" lg:w-[45%] h-max lg:h-96 overflow-scroll flex flex-col pb-10 gap-10 hide-scrollbar">
             {/* Step 1 */}
             <div className=" w-full h-max flex flex-col gap-5">
               <div className=" w-full h-max">
                 <img src={transferPic1} alt="" className="" />
               </div>
-              <p className="text-[#747198] text-[18px]">Detail account.</p>
+              <p className="small-light-text md:light-text md:text-base">Detail account.</p>
             </div>
 
             {/* Step 2 */}
@@ -597,7 +628,7 @@ function App() {
               <div className=" w-full h-max">
                 <img src={transferPic2} alt="" className="" />
               </div>
-              <p className="text-[#747198] text-[18px]">
+              <p className="small-light-text md:light-text md:text-base">
                 Transfer money to another account.
               </p>
             </div>
@@ -607,9 +638,7 @@ function App() {
               <div className=" w-full h-max">
                 <img src={transferPic3} alt="" className="" />
               </div>
-              <p className="text-[#747198] text-[18px]">
-                Confirm your transfer.
-              </p>
+              <p className="small-light-text md:light-text md:text-base">Confirm your transfer.</p>
             </div>
 
             {/* Step 4 */}
@@ -617,44 +646,46 @@ function App() {
               <div className=" w-full h-max">
                 <img src={transferPic4} alt="" className="" />
               </div>
-              <p className="text-[#747198] text-[18px]">
-                Embrace a hassle-free process that optimizes your <br />
+              <p className="small-light-text md:light-text md:text-base">
+                Embrace a hassle-free process that optimizes your <br className=" md:hidden lg:flex"/>
                 clinic's financial management.
               </p>
             </div>
           </div>
         </div>
 
+        {/* Customized Section */}
         <div className=" w-full h-max flex flex-col gap-10 pb-52">
-          <div className="flex flex-col gap-10">
-            <p className="bold-text">
+          <div className="flex flex-col gap-3 md:gap-7">
+            <p className="small-bold-text md: bold-text">
               Create customized <br />
               treatment for your clinic.
             </p>
-            <p className=" text-[#747AAF] text-[17px]">
+            <p className=" small-light-text md:light-text md:text-base">
               Our user-friendly interface optimizes the process, enabling clinic
-              staff <br />
+              staff <br className="hidden md:flex" />
               to manage treatments effortlessly and provide patients with the
-              best <br />
+              best <br className="hidden md:flex" />
               possible care.
             </p>
           </div>
 
-          <div className=" w-full h-max flex gap-7">
-            <img src={other1} alt="" className="w-[50%]" />
-            <img src={other2} alt="" className="w-[50%]" />
+          <div className=" w-full h-max flex flex-col lg:flex-row gap-7">
+            <img src={other1} alt="" className="lg:w-[50%]" />
+            <img src={other2} alt="" className="lg:w-[50%]" />
           </div>
         </div>
 
+        {/* Unified Section */}
         <div className=" w-full h-max flex flex-col gap-10 pb-52">
-          <div className="flex flex-col gap-10">
-            <p className="bold-text">
+          <div className="flex flex-col gap-3 md:gap-7">
+            <p className="small-bold-text md: bold-text">
               Unified staff and inventory <br />
               management and more.
             </p>
-            <p className=" text-[#747AAF] text-[17px]">
+            <p className="small-light-text md:light-text md:text-base">
               Enhance teamwork, productivity, and provide exceptional care with
-              a <br />
+              a <br className="hidden md:flex" />
               cohesive clinic environment
             </p>
           </div>
@@ -663,20 +694,21 @@ function App() {
             <img src={largePic2} alt="" className="" />
           </div>
 
-          <div className=" w-full h-max flex gap-5">
-            <img src={largePic3} alt="" className="w-[50%]" />
-            <img src={largePic4} alt="" className="w-[50%]" />
+          <div className=" w-full h-max flex flex-col lg:flex-row gap-5">
+            <img src={largePic3} alt="" className="lg:w-[50%]" />
+            <img src={largePic4} alt="" className="lg:w-[50%]" />
           </div>
 
           <img src={largePic5} alt="" className="" />
         </div>
 
+        {/* Empowering Section*/}
         <div className=" w-full h-max flex flex-col gap-10 pb-52">
-          <div className="flex flex-col gap-10">
-            <p className="bold-text">
+          <div className="flex flex-col gap-3 md:gap-7">
+            <p className="small-bold-text md: bold-text">
               Empowering patients <br />& dentists.
             </p>
-            <p className=" text-[#747AAF] text-[17px]">
+            <p className="small-light-text md:light-text md:text-base">
               Dentist and patient experience optimized patient management,
               streamlined communication, and <br />
               increased clinic efficiency.
@@ -687,25 +719,28 @@ function App() {
           </div>
         </div>
 
+        {/* Ease Section */}
         <div className=" w-full h-max flex flex-col gap-10 pb-52">
-          <div className="flex flex-col gap-10">
-            <p className="bold-text">
+          <div className="flex flex-col gap-3 md:gap-7">
+            <p className="small-bold-text md: bold-text">
               Ease of patient monitoring <br />
               for dentists.
             </p>
-            <p className=" text-[#747AAF] text-[17px]">
-              Dentists can monitor and analyze patient outcomes, ensuring <br />
-              personalized care and improved treatment outcomes.
+            <p className="small-light-text md:light-text md:text-base">
+              Dentists can monitor and analyze patient outcomes, ensuring <br className="md:hidden lg:flex"/>
+              personalized <br className="md:flex lg:hidden"/>care and improved treatment outcomes.
             </p>
           </div>
           <div className=" w-full h-max">
             <img src={ease1} alt="" className="" />
           </div>
         </div>
-        <div className="bg-white">
+
+        {/* Bottom Hero Section */}
+        <div className="bg-white z-10">
           <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
-            <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
-              <h2 className="mx-auto text-[60px] font-medium tracking-tight leading-tight text-white ">
+            <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-10 md:py-24 text-center shadow-2xl rounded-3xl sm:px-16">
+              <h2 className="mx-auto text-[40px] md:text-[60px] font-medium tracking-tight leading-tight text-white">
                 Interested in working <br />
                 together?
               </h2>
@@ -725,10 +760,11 @@ function App() {
         <div className=" w-full h-max flex flex-col">
           <div className="w-full h-max flex justify-between items-center pb-20">
             <p className=" bold-text">
-              Want to see more? here’s our other <br />
+              Want to see more? here’s our other{" "}
+              <br className="hidden md:flex" />
               project
             </p>
-            <div className=" w-max h-max flex items-center gap-3 self-end">
+            <div className=" w-max h-max hidden md:flex items-center gap-3 self-end">
               <p className="text-[#282560] font-[650] text-[18px] leading-tight">
                 VIEW ALL OUR AWESOME PROJECTS
               </p>
@@ -739,8 +775,8 @@ function App() {
           </div>
 
           {/* Arto */}
-          <div className="w-full h-max flex justify-between">
-            <div className=" w-[48%] h-max flex flex-col divide-y gap-10">
+          <div className="w-full h-max flex flex-col lg:flex-row justify-between">
+            <div className="lg:w-[48%] h-max flex flex-col divide-y gap-10">
               <div className=""></div>
               <div className=" w-full h-max flex flex-col gap-5">
                 <div className=" w-full flex justify-between items-center">
@@ -758,7 +794,7 @@ function App() {
               </div>
               <img src={artoPic} alt="" className="" />
             </div>
-            <div className=" w-[48%] h-max flex flex-col divide-y gap-10">
+            <div className="lg:w-[48%] h-max flex flex-col divide-y gap-10">
               <div className=""></div>
               <div className=" w-full h-max flex flex-col gap-5">
                 <div className=" w-full flex justify-between items-center">
@@ -792,15 +828,15 @@ function App() {
             <img src={logo} alt="" className="w-[275px] h-20" />
           </div>
 
-          <div className=" w-full h-max flex justify-between">
+          <div className=" w-full h-max flex flex-col lg:flex-row justify-between">
             {/* Left Side */}
             <div className="w-max h-max flex flex-col gap-10 pb-7">
               <div className=" w-max h-max flex flex-col gap-5">
-                <p className="text-[#282560] text-[50px] tracking-tighter leading-tight">
+                <p className="text-[#282560] text-[45px] tracking-tighter leading-tight">
                   Transforming ideas into <br />
                   exceptional product.
                 </p>
-                <p className="light-text text-[20px]">
+                <p className="light-text md:text-[20px]">
                   Feel free to reach out of if you want to collaborate with us.
                 </p>
               </div>
@@ -837,7 +873,7 @@ function App() {
             </div>
 
             {/* Right Side */}
-            <div className="w-max h-max flex gap-20 pb-7">
+            <div className="w-max h-max flex flex-col md:flex-row gap-20 pb-7">
               <div className=" w-max h-max flex flex-col gap-10">
                 <p className="text-[#282560] font-[600] text-[18px] leading-tight gap-2 hover:underline cursor-pointer">
                   ADDRESS

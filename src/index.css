@@ -38,8 +38,16 @@
   scrollbar-width: none; /* Firefox */
 }
 
+.small-bold-text{
+  @apply text-[#282560] font-medium text-[20px] tracking-tighter leading-tight;
+}
+
 .bold-text{
   @apply text-[#282560] font-medium text-[40px] tracking-tighter leading-tight;
+}
+
+.small-light-text{
+  @apply text-sm text-[#747AAF]
 }
 
 .light-text{
